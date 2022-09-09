@@ -35,6 +35,7 @@
 </div>
 
 <svelte:head>
+    <title>Currently fronting in PALS!</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="PALS fronters!" />
     <meta property="og:description" content={buildEmbedDesc()} />

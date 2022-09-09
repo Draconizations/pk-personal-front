@@ -1,9 +1,11 @@
 <script lang="ts">
     import type { Member } from "src/lib/types";
-    import { toHTML } from "discord-markdown";
+    import toHtml from "discord-markdown";
     import twemoji from "twemoji";
 
     export let member: Member;
+
+    const { toHTML } = toHtml;
 
     let name = toHTML(member.name, { embed: true });
     let prns = "";
