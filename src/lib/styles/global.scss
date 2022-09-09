@@ -1,0 +1,64 @@
+@import "light.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    margin: auto auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "ui-sans-serif", sans-serif;
+    background-color: $background;
+    color: $text;
+    display: flex;
+    flex-direction: column;
+}
+
+.container.front {
+    padding: 1rem 1rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 11rem);
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.card.front {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $block;
+    border-radius: 4px;
+
+    .avatar {
+        width: 100%;
+        height: auto;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .desc {
+        flex: 1;
+        padding: 0.75rem 0.5rem 1rem 0.5rem;
+        text-align: center;
+        overflow-wrap: break-word;
+
+        .name {
+            margin: 0px 0px 0.75rem;
+            border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+            padding-bottom: 0.25rem;
+        }
+
+        
+    }
+}
