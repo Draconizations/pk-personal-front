@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import type { Member } from "src/lib/types";
     import toHtml from "discord-markdown";
     import twemoji from "twemoji";
@@ -18,7 +19,7 @@
 
 </script>
 
-<div class="card front" style={`border-bottom: 4px solid #${member.color};`}>
+<div class="card front" style={`border-bottom: 4px solid #${member.color};`} tabindex={0} on:keydown={e => e.key === 'Enter' && goto(`/m/${member.id}`)} on:click={() => goto(`/m/${member.id}`)}>
     <img class="avatar" src={member.avatar_url} alt={`${member.name}'s avatar`}>
     <div class="desc">
         <h3 class="name">{@html name}</h3>

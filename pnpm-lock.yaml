@@ -5,6 +5,9 @@ specifiers:
   '@sveltejs/adapter-static': 1.0.0-next.42
   '@sveltejs/kit': next
   discord-markdown: ^2.5.1
+  emoji-regex: ^10.1.0
+  moment: ^2.29.4
+  nprogress: ^0.2.0
   sass: ^1.54.9
   svelte: ^3.44.0
   svelte-check: ^2.7.1
@@ -18,11 +21,14 @@ dependencies:
   '@sveltejs/adapter-node': 1.0.0-next.86
   '@sveltejs/adapter-static': 1.0.0-next.42
   discord-markdown: 2.5.1
+  emoji-regex: 10.1.0
+  moment: 2.29.4
   sass: 1.54.9
   twemoji: 14.0.2
 
 devDependencies:
   '@sveltejs/kit': 1.0.0-next.480_svelte@3.50.1+vite@3.1.0
+  nprogress: 0.2.0
   svelte: 3.50.1
   svelte-check: 2.9.0_sass@1.54.9+svelte@3.50.1
   svelte-preprocess: 4.10.7_dmgt4vqjdljwxc7vlji2ruxhdy
@@ -279,6 +285,10 @@ packages:
     dependencies:
       highlight.js: 11.6.0
       simple-markdown: 0.7.3
+    dev: false
+
+  /emoji-regex/10.1.0:
+    resolution: {integrity: sha512-xAEnNCT3w2Tg6MA7ly6QqYJvEoY1tm9iIjJ3yMKK9JPlWuRHAMoe5iETwQnx3M9TVbFMfsrBgWKR+IsmswwNjg==}
     dev: false
 
   /es6-promise/3.3.1:
@@ -721,6 +731,10 @@ packages:
       minimist: 1.2.6
     dev: true
 
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
+
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -758,6 +772,10 @@ packages:
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: true
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}

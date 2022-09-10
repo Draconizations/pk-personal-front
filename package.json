@@ -11,6 +11,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
+		"nprogress": "^0.2.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
@@ -23,6 +24,8 @@
 		"@sveltejs/adapter-node": "1.0.0-next.86",
 		"@sveltejs/adapter-static": "1.0.0-next.42",
 		"discord-markdown": "^2.5.1",
+		"emoji-regex": "^10.1.0",
+		"moment": "^2.29.4",
 		"sass": "^1.54.9",
 		"twemoji": "^14.0.2"
 	}
