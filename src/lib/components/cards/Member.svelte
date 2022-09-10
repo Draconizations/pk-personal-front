@@ -93,7 +93,8 @@ ${buildDescName()}
             </div>
     </main>
     {#if member.banner}
-    <div class="banner" style={`background-image: url(${member.banner})`} >
+    <div class="banner">
+        <img src={member.banner} alt={`${member.name}'s banner`}/>
     </div>
     {/if}
     </div>
