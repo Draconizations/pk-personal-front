@@ -73,7 +73,7 @@ ${buildDescName()}
         <img class="avatar" src={member.avatar_url} alt={`${member.name}'s avatar`}>
         {/if}
         <div class="info">
-            <h3><b>Name:</b> {member.name}</h3>
+            <h3>{member.name}</h3>
             <hr/>
             {#if getEmojis()}
             <span><b>Emojis:</b> {@html getEmojis()}</span>

@@ -33,7 +33,7 @@
     <title>{buildEmbedTitle()}</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content={buildEmbedTitle()} />
-    <meta property="og:description" content={`Come read some more about ${data.name}!`} />
+    <meta property="og:description" content={`Read some more about ${data.name}!`} />
     <meta property="og:url" content={`https://front.fulmine.xyz/m/${data.id}`} />
     <meta property="og:image" content={data.avatar_url ? data.avatar_url : ""} />
     <meta name="theme-color" content={data.color ? `#${data.color}` : "#ffffff"}>
