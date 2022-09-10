@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     background-color: $block;
     border-radius: 4px;
-    cursor: pointer;
+    flex: 1;
 
     .avatar {
         width: 100%;
@@ -64,7 +64,14 @@ body {
     }
 }
 
-.card.front:focus {
+.front.link {
+    border-radius: 4px;
+    color: $text;
+    display: flex;
+    flex-direction: column;
+}
+
+.front.link:focus {
     outline: none !important;
     box-shadow: 0px 0px 0px 3px rgba($highlight, 0.6);
     transform: scale(102%);

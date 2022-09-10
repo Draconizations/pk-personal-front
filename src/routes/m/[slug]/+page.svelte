@@ -1,4 +1,5 @@
 <script lang="ts">
+    import GlobalStyle from '$lib/styles/global.scss';
     import Member from '$lib/components/cards/Member.svelte';
 
     export let data;
