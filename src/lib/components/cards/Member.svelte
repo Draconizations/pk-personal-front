@@ -61,7 +61,7 @@ ${buildDescName()}
     function parseBirthday(birthday: string) {
         let str = moment(birthday, "YYYY-MM-DD").format("MMM D, YYYY");
 
-        if (birthday.endsWith(', 0004')) str.replace(', 0004', "");
+        if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
 
         return str;
     }
