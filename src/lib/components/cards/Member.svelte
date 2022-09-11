@@ -87,7 +87,7 @@ ${buildDescName()}
         </div>
     </section>
     <div class="content">
-    <main class="desc" style={member.color ? `border-left: 4px solid #${member.color}` : ""}>
+    <main class="desc" style={member.banner && member.color ? `border-left: 4px solid #${member.color}` : ""}>
             <div>
                 {@html desc} 
             </div>
@@ -96,6 +96,8 @@ ${buildDescName()}
     <div class="banner">
         <img src={member.banner} alt={`${member.name}'s banner`}/>
     </div>
+    {:else if member.color}
+    <div class="banner" style={`background-color: #${member.color}`}></div>
     {/if}
     </div>
 </div>
