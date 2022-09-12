@@ -77,7 +77,7 @@ export function getBirthday(member: Member) {
 export function getPronouns(member: Member) {
     if (useCustom) return custom.getPronouns(member);
 
-    return member.pronouns ? member.pronouns : null;
+    return member.pronouns ? member.pronouns : "";
 }
 
 // Returns the member's avatar
