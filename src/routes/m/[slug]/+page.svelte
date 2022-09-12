@@ -1,41 +1,24 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
+
     import GlobalStyle from '$lib/styles/global.scss';
     import Member from '$lib/components/cards/Member.svelte';
+    import { buildMemberPageTitle, buildMemberEmbedTitle, buildMemberEmbedDescription, getAvatar, getColor } from '$lib/functions/strings';
 
     export let data;
 
-    function buildEmbedTitle() {
-        let str: string = "PALS › " + data.name;
-        
-        if (data.display_name && data.display_name.includes("(") && data.display_name.includes(")")) {
-
-            let first: number;
-            let last: number;
-
-            let prns: string = "";
-
-            first = data.display_name.indexOf("(");
-            last = data.display_name.indexOf(")");
-
-            prns = data.display_name.slice(first, last + 1);
-
-            str += " " + prns;
-        } else {
-            str = data.name + " PALS";
-        }
-
-        return str;
-    }
+    let url = "";
+    onMount(() => url = window.location.href);
 </script>
 
 <Member member={data} />
 
 <svelte:head>
-    <title>{buildEmbedTitle()}</title>
+    <title>{buildMemberPageTitle(data)}</title>
     <meta property="og:type" content="website">
-    <meta property="og:title" content={buildEmbedTitle()} />
-    <meta property="og:description" content={`Read some more about ${data.name}!`} />
-    <meta property="og:url" content={`https://front.fulmine.xyz/m/${data.id}`} />
-    <meta property="og:image" content={data.avatar_url ? data.avatar_url : ""} />
-    <meta name="theme-color" content={data.color ? `#${data.color}` : "#ffffff"}>
+    <meta property="og:title" content={buildMemberEmbedTitle(data)} />
+    <meta property="og:description" content={buildMemberEmbedDescription(data)} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={getAvatar(data)} />
+    <meta name="theme-color" content={getColor(data, true)}>
 </svelte:head>

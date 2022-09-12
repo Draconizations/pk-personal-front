@@ -1,7 +1,9 @@
 import { error } from '@sveltejs/kit';
+import variables from '$lib/variables';
 
 export async function load( {params, fetch} ) {
-    const sid = "drake";
+    const sid = variables.systemId ? variables.systemId : null;
+    if (sid === null)  throw error(500, "If you're the owner of this site, please set the 'VITE_SYSTEM_ID' environment variable!");
     const mid = params.slug;
 
     let res: any;
@@ -16,7 +18,7 @@ export async function load( {params, fetch} ) {
         return resp.json();
     });
 
-    if (res.system !== "drake") throw error(404, `Member with id ${mid} does not exist in our system.`)
+    if (res.system !== sid) throw error(404, `Member with id ${mid} does not exist in our system.`)
 
     return await res;
 }
