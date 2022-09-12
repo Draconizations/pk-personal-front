@@ -21,6 +21,7 @@
         <h3>{@html buildSwitchOutText()}</h3>
     {/if}
 </div>
+<span class="tinytext">(Click a card to view member info)</span>
 
 <svelte:head>
     <title>{buildFrontPageTitle(data.members)}</title>

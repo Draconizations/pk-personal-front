@@ -71,11 +71,16 @@ body {
     flex-direction: column;
 }
 
-.front.link:focus {
+.front.link:hover, .front.link:focus {
     outline: none !important;
     box-shadow: 0px 0px 0px 3px rgba($highlight, 0.6);
     transform: scale(102%);
     transition: transform 0.1s ease-out;
+}
+
+.tinytext {
+    font-size: 0.8rem;
+    color:rgba($text, 0.75)
 }
 
 .container.member {
