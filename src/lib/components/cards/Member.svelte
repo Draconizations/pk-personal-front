@@ -44,7 +44,7 @@
         <img src={getBanner(member)} alt={`${member.name}'s banner`}/>
     </div>
     {:else if getColor(member)}
-    <div class="banner" style={`background-color: #${getColor(member)}`}></div>
+    <div class="banner" style={`background-color: ${getColor(member)}`}></div>
     {/if}
     </div>
 </div>
