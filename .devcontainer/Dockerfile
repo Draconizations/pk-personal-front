@@ -12,3 +12,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g pnpm"
+
+ENV VITE_SYSTEM_NAME="Starchild" \
+    VITE_SYSTEM_ID="starc"
