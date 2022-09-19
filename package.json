@@ -21,7 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "1.0.0-next.43",
+		"@sveltejs/adapter-cloudflare": "1.0.0-next.34",
 		"discord-markdown": "^2.5.1",
 		"dotenv": "^16.0.2",
 		"emoji-regex": "^10.1.0",
