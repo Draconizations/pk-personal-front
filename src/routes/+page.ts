@@ -8,7 +8,7 @@ export async function load( {fetch} ) {
     let res: any;
     res = await fetch(`https://api.pluralkit.me/v2/systems/${sid}/fronters`, {
         headers: {
-            'origin': 'https://front.fulmine.xyz'
+            'origin': 'https://fronters.akarys.me'
             }
     })
     .then(resp => {
