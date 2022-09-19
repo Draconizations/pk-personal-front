@@ -126,6 +126,16 @@ body {
                 background-color: $background;
             }
         }
+
+        .back {
+            display: flex;
+            gap: 0.325rem;
+            padding: 1rem;
+            padding-right: 0.5rem;
+            border-radius: 4px;
+            background-color: $block;
+            color: inherit;
+        }
     
     }
 
@@ -180,6 +190,10 @@ body {
                 width: 100%;
                 height: 100%;
             }
+        }
+
+        .small {
+            padding-top: 2rem;
         }
     }
 }

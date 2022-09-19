@@ -17,3 +17,15 @@ export interface Front {
     timestamp: string,
     members?: Member[]
 }
+
+export interface Group {
+    id: string,
+    uuid?: string,
+    name: string,
+    display_name?: string,
+    description?: string,
+    icon?: string,
+    banner?: string,
+    color?: string,
+    created: string
+}

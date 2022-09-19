@@ -1,13 +1,14 @@
 <script lang="ts">
-    import type { Member } from '$lib/types';
+    import type { Member, Group } from '$lib/types';
     import toHtml from 'discord-markdown';
     import twemoji from 'twemoji';
     import moment from 'moment';
-    import { getEmojis, getBirthday, getPronouns, getDescription, getAvatar, getColor, getBanner, getName, convertToHTML } from '$lib/functions/strings';
+    import { getEmojis, getBirthday, getPronouns, getDescription, getGroups, getAvatar, getColor, getBanner, getName, convertToHTML } from '$lib/functions/strings';
 
     const { toHTML } = toHtml;
 
     export let member: Member;
+    export let groups: Group[];
 </script>
 
 <div class="container member">
@@ -30,6 +31,7 @@
                 <span><b>Pronouns:</b> {@html convertToHTML(getPronouns(member))}</span>
             {/if}
         </div>
+        <a class="back" href="/"><b>Back</b></a>
     </section>
     <div class="content">
     {#if getDescription(member)}
@@ -39,12 +41,19 @@
             </div>
     </main>
     {/if}
+    {#if getGroups(groups)}
+    <main class="desc" style={getBanner(member) && getColor(member) ? `border-left: 4px solid ${getColor(member)}` : ""}>
+            <div>
+                {@html convertToHTML(getGroups(groups))} 
+            </div>
+    </main>
+    {/if}
     {#if getBanner(member)}
     <div class="banner">
         <img src={getBanner(member)} alt={`${member.name}'s banner`}/>
     </div>
     {:else if getColor(member)}
-    <div class="banner" style={`background-color: ${getColor(member)}`}></div>
+    <div class="banner small" style={`background-color: ${getColor(member)}`}></div>
     {/if}
     </div>
 </div>

@@ -10,7 +10,7 @@ import moment from 'moment';
 
 import variables from '$lib/variables';
 import custom from '$lib/functions/customStrings';
-import type { Member } from '$lib/types';
+import type { Group, Member } from '$lib/types';
 
 const { toHTML } = toHtml;
 const emojiregex = emojiRegex();
@@ -33,18 +33,21 @@ export function getSystemName() {
     else return ""; 
 }
 
-export function getSystemId() {
-    if (useCustom) return custom.getSystemId();
-
-    if (variables.systemId !== null && typeof variables.systemId === "string") return variables.systemId;
-    else return ""; 
-}
-
 // Returns a member's description
 export function getDescription(member: Member) {
     if (useCustom) return custom.getDescription(member);
 
-    return member.description ? member.description : "(No description)";
+    return member.description ? member.description : "";
+}
+
+// Returns all the groups a member is in
+export function getGroups(groups: Group[]) {
+    if (groups.length == 0) return ""
+
+    const listFormatter = new Intl.ListFormat('en', { style: 'long' });
+    const groupNames = listFormatter.format(groups.map((e) => e.display_name || e.name))
+
+    return `**Group:${groups.length > 1 ? "s" : ""}** ${groupNames}`
 }
 
 // gets all the emojis from the member (display) name
@@ -100,7 +103,19 @@ export function getBanner(member: Member) {
 export function getName(member: Member) {
     if (useCustom) return custom.getName(member);
 
-    return member.name;
+    // Guess the member nickname using the display name
+    var nick = member.name
+    if (member.display_name !== undefined) {
+        // Remove anything after the first | 
+        // usually pronouns 
+        nick = member.display_name.split("|")[0].trim()
+    }
+
+    if (nick !== member.name) {
+        return `${nick} (${member.name})`
+    } else {
+        return member.name
+    }
 }
 
 // Gets a member's color, returns emptystring or fallback color
@@ -160,10 +175,8 @@ export function buildMemberPageTitle(member: Member) {
 // Builds the opengraph embed title for a member page
 export function buildMemberEmbedTitle(member: Member) {
     if (useCustom) return custom.buildMemberPageTitle(member);
-    
-    let memberName = member.display_name ? member.display_name : member.name;
 
-    let str = memberName + " " + getSystemName();
+    let str = getName(member) + " " + getSystemName();
     return str.trim();
 }
 
