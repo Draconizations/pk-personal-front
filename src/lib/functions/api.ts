@@ -8,7 +8,7 @@ export function getSystemId() {
     return sid;
 }
 
-export async function fetchApi(url: string, fetch: any) {
+export async function fetchApi(url: string) {
     let res: any;
     res = await fetch(url, {
         headers: {
