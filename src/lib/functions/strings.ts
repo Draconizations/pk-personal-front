@@ -66,6 +66,8 @@ export function getEmojis(member: Member) {
 export function getBirthday(member: Member) {
     if (useCustom) return custom.getBirthday(member);
 
+    if (member.birthday === null) { return "" };
+
     let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
 
     if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
