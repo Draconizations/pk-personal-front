@@ -1,6 +1,8 @@
 import { error } from '@sveltejs/kit';
 import variables from '$lib/variables';
 
+export const prerender = true;
+
 export async function load( {fetch} ) {
     const sid = variables.systemId ? variables.systemId : null;
     if (sid === null)  throw error(500, "If you're the owner of this site, please set the 'VITE_SYSTEM_ID' environment variable!");

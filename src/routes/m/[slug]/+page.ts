@@ -1,6 +1,8 @@
 import { error } from '@sveltejs/kit';
 import variables from '$lib/variables';
 
+export const prerender = true;
+
 export async function load( {params, fetch} ) {
     const sid = variables.systemId ? variables.systemId : null;
     if (sid === null)  throw error(500, "If you're the owner of this site, please set the 'VITE_SYSTEM_ID' environment variable!");
@@ -9,7 +11,7 @@ export async function load( {params, fetch} ) {
     let res: any;
     res = await fetch(`https://api.pluralkit.me/v2/members/${mid}`, {
         headers: {
-            'origin': 'https://front.fulmine.xyz'
+            'origin': 'https://fronters.akarys.me'
             }
     })
     .then(resp => {
