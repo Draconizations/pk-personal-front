@@ -9,8 +9,10 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			out: "build"
-		})
+			out: "build",
+			fallback: "404.html"
+		}),
+		prerender: { entries: [] }
 	}
 };
 

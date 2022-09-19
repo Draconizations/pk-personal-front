@@ -1,6 +1,6 @@
 import { fetchApi } from '$lib/functions/api';
 
-export const prerender = true;
+export const prerender = false;
 
 export async function load( {params, fetch} ) {
     const mid = params.slug;
