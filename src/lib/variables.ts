@@ -1,5 +1,6 @@
 export default {
-    customStrings: import.meta.env.VITE_CUSTOM_STRINGS,
-    systemName: import.meta.env.VITE_SYSTEM_NAME,
-    systemId: import.meta.env.VITE_SYSTEM_ID,
+    // Hardcoded because CLoudflare doesn't handle env vars very well
+    customStrings: false,
+    systemName: "Starchild",
+    systemId: "starc",
 };

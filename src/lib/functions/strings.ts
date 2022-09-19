@@ -105,7 +105,7 @@ export function getName(member: Member) {
 
     // Guess the member nickname using the display name
     var nick = member.name
-    if (member.display_name !== undefined) {
+    if (member.display_name) {
         // Remove anything after the first | 
         // usually pronouns 
         nick = member.display_name.split("|")[0].trim()
