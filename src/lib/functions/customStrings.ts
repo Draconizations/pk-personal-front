@@ -166,8 +166,6 @@ function buildMemberEmbedTitle(member: Member) {
         prns = member.display_name.slice(first, last + 1);
 
         str += " " + prns;
-    } else {
-        str = member.name + " " + getSystemName();
     }
 
     return str.trim();
