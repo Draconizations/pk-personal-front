@@ -66,11 +66,14 @@ export function getEmojis(member: Member) {
 export function getBirthday(member: Member) {
     if (useCustom) return custom.getBirthday(member);
 
-    let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
+    if (member.birthday) {
+        let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
 
-    if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
-
-    return str;
+        if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
+    
+        return str;
+    }
+    return "";
 }
 
 // Parses a member's pronouns, just returns the pronouns by default.
