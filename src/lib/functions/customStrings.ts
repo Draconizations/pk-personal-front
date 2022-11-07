@@ -12,7 +12,7 @@ import moment from 'moment';
 import twemoji from "twemoji";
 
 import type { Member } from "$lib/types";
-import { buildDefaultDesc } from '$lib/functions/palsStrings';
+import * as pals from '$lib/functions/palsStrings';
 import variables from "$lib/variables";
 
 const emojiregex = emojiRegex();
@@ -59,7 +59,7 @@ function getSystemId() {
 // Returns a member's description
 function getDescription(member: Member) {
     if (member.description) return member.description;
-    else return buildDefaultDesc(member);
+    else return pals.buildDefaultDesc(member);
 }
 
 // gets all the emojis from the member (display) name
@@ -106,10 +106,10 @@ function getPronouns(member: Member) {
 // Parses a member's birthday
 function getBirthday(member: Member) {
     if (member.birthday) {
-    let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
+        let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
 
-    if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
-    return str;
+        if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
+        return str;
     }
     else return "";
 }
