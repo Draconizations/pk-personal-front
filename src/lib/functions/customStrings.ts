@@ -105,11 +105,13 @@ function getPronouns(member: Member) {
 
 // Parses a member's birthday
 function getBirthday(member: Member) {
+    if (member.birthday) {
     let str = moment(member.birthday, "YYYY-MM-DD").format("MMM D, YYYY");
 
     if (str.endsWith(', 0004')) str = str.replace(', 0004', "");
-
     return str;
+    }
+    else return "";
 }
 
 // Builds the page title for the current fronters page
