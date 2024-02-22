@@ -1,3 +1,8 @@
+# ⚠️ This repository is Archived
+A more up-to-date (and multi-user) version is available over at https://codeberg.org/fulmine/pk-fulmine!
+
+-----
+
 # PK-Personal-Front
 A simple little website built using Sveltekit that displays your PluralKit system's current front, as well as the system's members' information. A demo using our own system is available at https://front.fulmine.xyz
 
